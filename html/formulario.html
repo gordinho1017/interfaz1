@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Formularios con JavaScript</title>
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+    <h1>Reserva tu horario</h1>
+    <form id="form1">
+        <h2>Formulario 1</h2>
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <button type="button" onc lick="enviarFormulario('form1')">Enviar</button>
+    </form>
+
+    <form id="form2">
+        <h2>Formulario 2</h2>
+        <input type="number" placeholder="Telefono" required>
+        <select required>
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="opcion1">Masculino</option>
+            <option value="opcion2">Femenino</option>
+        </select>
+        <button type="button" onclick="enviarFormulario('form2')">Enviar</button>
+    </form>
+
+    <form id="form3">
+        <h2>Formulario 3</h2>
+        <textarea placeholder="Ingrese un Comentario" rows="4" required></textarea>
+        <button type="button" onclick="enviarFormulario('form3')">Enviar</button>
+    </form>
+
+    <form id="form4">
+        <h2>Formulario 4</h2>
+        <input type="date" required>
+        <input type="checkbox" id="checkbox4" required>
+        <label for="checkbox4">Acepto los términos y condiciones</label>
+        <button type="button" onclick="enviarFormulario('form4')">Enviar</button>
+    </form>
+
+    <script>
+        function enviarFormulario(formId) {
+            var form = document.getElementById(formId);
+            var isValid = form.checkValidity();
+
+            if (isValid) {
+                alert('Formulario enviado correctamente!');
+                // Puedes agregar aquí el código para enviar los datos al servidor si es necesario.
+            } else {
+                alert('Por favor, complete todos los campos correctamente.');
+            }
+        }
+    </script>
+</body>
+</html>
